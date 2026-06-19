@@ -109,5 +109,12 @@ form.addEventListener("submit",function(event){
   const name = document.getElementById("Phone Number").value
   const name =  document.getElementById("Email").value
 
+
+  if(name ===""){
+
+    messagebox.textContent="please enter your name "
+  }
+
+
 })
 //checking whether customer sent right things or not 
