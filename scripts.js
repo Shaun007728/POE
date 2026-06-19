@@ -12,17 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
     {
-        name:" 1litre"
-        category: 'Drinking Water'
-        price:"R12"
+        name:"1 litre",
+        category:"Drinking Water",
+        price:"R12",
         description:"Pure spring water"
     },
 
 
     {
-        name:"1.5Litre"
-        category:"Drinking Water"
-        price:"R14"
+        name:"1.5Litre",
+        category:"Drinking Water",
+        price:"R14",
         description:"Pure spring water"
     },
 
@@ -35,14 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     {
-        name:"10Litre"
-        category:"Bulk water"
-        price:"R40"
+        name:"10Litre",
+        category:"Bulk water",
+        price:"R40",
         description:"Ideal for home use"
     },
-
-
-
 
     {
       name: "Water Delivery Service",
@@ -59,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('productsContainer');
     if (!container) return;
 
-  
+    container.innerHTML = '';
 
     if (filteredProducts.length === 0) {
       container.innerHTML = '<p style="text-align:center; color:#666;">No products found.</p>';
@@ -80,64 +77,64 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Search functionality
-  searchInput.addEventListener('input', () => {
-    const searchTerm = searchInput.value.toLowerCase().trim();
-    
-    const filtered = products.filter(product => 
-      product.name.toLowerCase().includes(searchTerm) ||
-      product.category.toLowerCase().includes(searchTerm) ||
-      product.description.toLowerCase().includes(searchTerm)
-    );
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      
+      const filtered = products.filter(product => 
+        product.name.toLowerCase().includes(searchTerm) ||
+        product.category.toLowerCase().includes(searchTerm) ||
+        product.description.toLowerCase().includes(searchTerm)
+      );
 
-
-    displayProducts(filtered);
-  });
+      displayProducts(filtered);
+    });
+  }
 
   // Show all products when page loads
   displayProducts(products);
-}),
 
-//giving the submit button in the contact page a function
-const form = document.getElementById("enquiryForm")
-const Message-box=document.getElementById("Message-box")
+  // Contact form handling inside DOMContentLoaded to ensure elements exist
+  const form = document.getElementById("enquiryForm");
+  const messageBox = document.getElementById("Message-box");
 
-form.addEventListener("submit",function(event){
-  //other line will be added after
+  if (form && messageBox) {
+    form.addEventListener("submit", function(event){
+      event.preventDefault();
 
-  const name = document.getElementById("Name").value
-  const Email =  document.getElementById("Email").value
-  const Message = document.getElementById("message").value
+      const nameValue = document.getElementById("Name") ? document.getElementById("Name").value.trim() : '';
+      const email = document.getElementById("Email") ? document.getElementById("Email").value.trim() : '';
+      const messageValue = document.getElementById("message") ? document.getElementById("message").value.trim() : '';
 
+      if(nameValue === "") {
+        messageBox.textContent= "Please enter your name.";
+        return;
+      }
 
-  if(name === "") {
+      if(email === ""){
+        messageBox.textContent= "Please enter your email.";
+        return;
+      }
 
-    Message-box.textContent= "please enter your name "
-    return;
+      if(!email.includes('@') || !email.includes('.')){
+        messageBox.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      if(messageValue === "") {
+        messageBox.textContent = 'Please enter your message.';
+        return;
+      }
+
+      const myEmail = "shangisasiyanda@gmail.com";
+      const subject = "New Contact Form Submission From " + nameValue;
+      const body = "Name: " + nameValue + "\nEmail: " + email + "\n\nMessage: " + messageValue;
+      
+      window.location.href =  "mailto:" + myEmail + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+      //displaying a success message
+      messageBox.textContent = 'Thank you for contacting us ' + nameValue + '! We will get back to you shortly.';
+      form.reset();//reset the form fields
+    });
   }
-
-
-  if(email ===""){
-
-    Message-box.textContent= "please enter your email"
-    return;
-  }
-
-  if(!email.includes('@') || !email.includes('.')){
-    Message-box.textContent = 'please enter valid email address.';
-    return
-  }
-  if(Message === "") {
-    Message-box.textContent = 'please enter your message.';
-    return;
-  }
-
-  const myEmail = "shangisasiyanda@gmail.com";
-  const subject = "New Contact Form Submission From" + name;
-  const body = "Name:" + name + "\nEmail: " + email +"\n\nMessage: " + Message
-  
-  window.location.href =  "mailto:" + myEmail + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-
-  //displaying a success message
-  Message-box.textContent = 'Thank you for contacting us ' + name + '!we will get back to you shortly.';
-  form.reset();//reset the form fields
-})
+});
