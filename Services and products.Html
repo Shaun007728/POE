@@ -5,50 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background-color: rgb(236, 245, 245);">
+    <body style="background-image: url(3105\ ZN.jpg);
+    <div Style=" background-color: rgb(233, 238, 238);></div>
     <nav>
         <a href="Index.html">Homepage</a>
         <a href="Aboutus.Html">Aboutus</a>
         <a href="Services and products.Html">Services and Products</a>
         <a href="Contact us.Html">Contact</a>
+        <a href="Delivery.html">Delivery Details</a>
+        <link rel="stylesheet" href="Style.css">
+        
+
+        <!--cart icon-->
+<a href="#" id="cart-link" style="position:relative;display:inline-block;margin-left: 15px;">
+    🛒
+    <span id="cart-count"
+          style="position: absolute;top: -8px ;right:-8px;
+          background: red;color: white;font-size: 12px;
+          width: 18px;height: 18px;border-radius: 50%;
+          display: none;align-items: center; justify-content: center;">
+          
+        
+    </span>
+
+</a>
+
+<!--search Bar insert-->
+<div style="text-align: center; margin: 20px 0;">
+    <input 
+    type="text"
+    id="searchInput"
+    placeholder="Search Prducts or Services..."
+    style="padding: 12px;width: 60%;max-width: 500px; border:2px solid #00bfff;border-radius: 250px;font-size:16px;">
+  
+
     </nav>
 
 
     <center>
     <h1>Services We Do:</h1>
-     <P> Sell personalized 500ml bottles for R8</P>
+     <P> Sell personalized 500ml bottles for R8each</P>
      <P>Offer mobile fridges  to rent for the cheap price of R1000 for 3Days.</P>
-     <P>We also offer free Delivery with each purchase. </P>
+     <P>Offer a pack of free ice with each purchase above R50 every Friday. </P>
+     <P>We also offer free Delivery with each purchase. </P> 
+
+     <p>To find out more on the services press the button below to speak to a person to enquire the necessary informatin.
+
+     </p>
+
+
+     <!--call to enquire button-->
+
+
+     <a href="Contact us.Html" style="text-decoration: none;" class="enquire-btn"></a>
+     <button style="padding: 12px 25px;font-size:16px;background-color: #00aaff; color: white; border:none;border-radius: 8px;cursor: pointer;">
+        Call To Enquire
+     </button>
+     </a>
+    
 
 
         <H1>Products We Offer :</H1>
         <P>500ML_R8: </P>
         <img src="500ml.webp" alt="">
+        <button class="Add To Cart" data-name="500ML" data-price="8">Add To Cart</button>
 
 
         <P>1Litre_R12:</P>
         <img src="1 Litre.png"alt=""Width="150cm">
-
-
+        <button class="Add To Cart" data-name="1Litre" data-price="12">Add To Cart</button>
 
 <P>1.5Litre_R14:</P>
     <img src="1.5 litre.jpg" alt="">
-    
+    <button class="Add To Cart" data-name="1.5Litre" data-price="14">Add To Cart</button>
+
 <P>5Litre_R24:</P>
     <img src="5LItre.png" alt=""width="220cm" >
+    <button class="Add To Cart" data-name="5Litre" data-price="24">Add To Cart</button>
 
-
-
-
-    
 <P>10Litre_R40</P>
     <img src="10 litre.png" alt=""width="320cm">
+    <button class="Add To Cart" data-name="10Litre" data-price="40">Add To Cart</button>
 
 
 
     
 <P>3KG ICE_R20</P>
     <img src="3Kg ice.jpg" alt="">
+    <button class="Add To Cart" data-name="3KG ICE" data-price="20">Add To Cart</button>
     
 
 

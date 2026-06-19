@@ -5,28 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
 </head>
-<body style="background-color: rgb(233, 242, 242);">
-    <div Style=" background-color: rgb(233, 238, 238);"></div>
+<body style="background-image: url(3105\ ZN.jpg);
+    <div Style=" background-color: rgb(233, 238, 238);></div>
     <Header>
-<Nav>
+        <!--this is my navigation bar and it will be the same on all pages-->
+<nav>
 <a href="Index.html ">Homepage</a>
 <a href="Aboutus.Html">About Us</a>
 <a href="Services and products.Html">Services and products </a>
 <a href="Contact us. Html ">Contact </a>
+<a href="Delivery.html">Delivery Details</a>
+<link rel="stylesheet" href="Style.css">
+
+
+<!--cart icon-->
+<a href="#" id="cart-link" style="position:relative;display:inline-block;margin-left: 15px;">
+    🛒
+    <span id="cart-count"
+          style="position: absolute;top: -8px ;right:-8px;
+          background: red;color: white;font-size: 12px;
+          width: 18px;height: 18px;border-radius: 50%;
+          display: none;align-items: center; justify-content: center;">
+          
+        
+    </span>
+</a>
 </Nav>
+
+<!--search Bar insert-->
+<div style="text-align: center; margin: 20px 0;">
+    <input 
+    type="text"
+    id="searchInput"
+    placeholder="Search Prducts or Services..."
+    style="padding: 12px;width: 60%;max-width: 500px; border:2px solid #00bfff;border-radius: 250px;font-size:16px;">
+  
+
     </Header>
     <hr>
     <Main>
+    
+
+        <!--this is the heading for the website on my homepage -->
         <center>
         <h1 >Welcome To 3105 Water</h1>
      
         <br>
         <img src="3105 ZN.jpg" style="width: 10cm;height: 10cm;" >
-        <p>"By The people for the people "</p>
+        <p>"Fresh,Clean,Reliable water for everyone. "</p>
+
+        <button onclick="Alert(thanks for visiting )">Learn more
+
+        </button>
+        <br>
 </center>
+
     </Main>
+    <script src="scripts.js"></script>
+
 </body> 
 <center>
+    <H2>Our Services</H2>
+    <p>We provide purified drinking water, bulk supply along with home delivery around KZN </p>
+
+    <Section><H3>Why choose us? </H3>
+    <Ul style="list-style: none;"></Ul>
+    <li>100% Clean and safe water</li>
+    <Li>Affordable prices</Li>
+    <Li>Fast home and work delivery around KZN</Li>
+    <li>Trusted by the community. </li>
+    </Section>
+
     <table style="background-color: rgb(197, 223, 223);" border="1" > 
         <tr style="background-color: rgb(216, 231, 231);">
             <th>Operating Days</th>
@@ -68,14 +117,27 @@
             <td>closed</td>
         </tr>
     </table> 
+    <Section>
+        <H1>Contact info</H1>
+        <p>Phone:083 799 6645</p>
+        <P>Email:info@3105Water.com</P>
+
+
+    </Section>
     
 </center>
 
 
 
 <hr>
-  <center><footer><p>copyright &copy; 2026- &amp Developed by <b>Siyanda Shangisa</b></p></footer>
+<center><footer><p>copyright &copy; 2026- &amp Developed by <b>Siyanda Shangisa</b></p></footer>
 </center>
+
+
+
+
+
+
 
 
 </html>
