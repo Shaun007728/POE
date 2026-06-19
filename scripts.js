@@ -97,53 +97,27 @@ document.addEventListener('DOMContentLoaded', () => {
   displayProducts(products);
 }),
 
-//giving the submit button in the contact page a functionx
-const form = document.getElementById("Contact us")
-const messagebox=document.getElementById("Message box")
+//giving the submit button in the contact page a function
+const form = document.getElementById("enquiryForm")
+const messagebox=document.getElementById("Message-box")
 
 form.addEventListener("submit",function(event){
   //other line will be added after
 
   const name = document.getElementById("Name").value
-  const name = document.getElementById("Surname").value
-  const name = document.getElementById("Phone Number").value
-  const name =  document.getElementById("Email").value
+  const Email =  document.getElementById("Email").value
+  const Message = document.getElementById("message").value
 
 
-  if(name === ""){
+  if(name === "") {
 
     messagebox.textContent= "please enter your name "
-    return
+    return;
   }
 
-  if(surname === ""){
-
-    messagebox.textContent= "please enter your surname"
-    return
-  }
-
-  if (phoneNumber === "") {
-
-    messagebox.textContent= "please enter your phoneNumber"
-    return
-  }
 
   if(email ===""){
 
     messagebox.textContent= "please enter your email"
     return
   }
-
-  //linking my email
-
-const myEmail = "shangisasiyamda@gmail.com"
-const subject = "New Contact Form Submission from"+name;
-const body = "Name:" +name + "\nEmail: " + email + "\n\nMessage :" +message;
-
-window.location.href="malito:"+ myEmail +"?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body)
-
-//show success message 
-messagebox.textContent = 'Thank You For Contacting Us,' + name + 'We Will Get Back To  You';
-form.
-})
-

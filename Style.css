@@ -105,3 +105,47 @@ nav{
 
  }
 
+ .card{
+  max-width: 350px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+ }
+
+ .EnquiryForm{
+  text-align: center;
+  color: #0ea5e9;
+  margin-bottom: 30px;
+  font-size: 2rem;
+
+ }
+
+ form label{ 
+  text-align: center;
+  display: block;
+  margin: 15px 0 8px;
+  font-weight: bold;
+  color: #333;
+ }
+
+ .submitbutton{
+  text-align: center;
+  width: 50%;
+  background: #0ea5e9;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1 rem;
+  cursor: pointer;
+  margin-top: 20px;
+ }
+
+ .submitbutton:hover{
+  background: #0284c8;
+
+ }
+
+ 
