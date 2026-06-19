@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     {
         name:" 1litre"
-        category: "Drinking Water"
+        category: 'Drinking Water'
         price:"R12"
         description:"Pure spring water"
     },
