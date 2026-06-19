@@ -110,11 +110,40 @@ form.addEventListener("submit",function(event){
   const name =  document.getElementById("Email").value
 
 
-  if(name ===""){
+  if(name === ""){
 
-    messagebox.textContent="please enter your name "
+    messagebox.textContent= "please enter your name "
+    return
   }
 
+  if(surname === ""){
 
+    messagebox.textContent= "please enter your surname"
+    return
+  }
+
+  if (phoneNumber === "") {
+
+    messagebox.textContent= "please enter your phoneNumber"
+    return
+  }
+
+  if(email ===""){
+
+    messagebox.textContent= "please enter your email"
+    return
+  }
+
+  //linking my email
+
+const myEmail = "shangisasiyamda@gmail.com"
+const subject = "New Contact Form Submission from"+name;
+const body = "Name:" +name + "\nEmail: " + email + "\n\nMessage :" +message;
+
+window.location.href="malito:"+ myEmail +"?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body)
+
+//show success message 
+messagebox.textContent = 'Thank You For Contacting Us,' + name + 'We Will Get Back To  You';
+form.
 })
-//checking whether customer sent right things or not 
+
