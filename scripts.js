@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to display filtered products
   function displayProducts(filteredProducts) {
-    // You'll need a container in HTML with id="productsContainer"
+  
     const container = document.getElementById('productsContainer');
     if (!container) return;
 
-    container.innerHTML = ''; // Clear previous results
+  
 
     if (filteredProducts.length === 0) {
       container.innerHTML = '<p style="text-align:center; color:#666;">No products found.</p>';
@@ -89,9 +89,25 @@ document.addEventListener('DOMContentLoaded', () => {
       product.description.toLowerCase().includes(searchTerm)
     );
 
+
     displayProducts(filtered);
   });
 
   // Show all products when page loads
   displayProducts(products);
-});
+}),
+
+//giving the submit button in the contact page a functionx
+const form = document.getElementById("Contact us")
+const messagebox=document.getElementById("Message box")
+
+form.addEventListener("submit",function(event){
+  //other line will be added after
+
+  const name = document.getElementById("Name").value
+  const name = document.getElementById("Surname").value
+  const name = document.getElementById("Phone Number").value
+  const name =  document.getElementById("Email").value
+
+})
+//checking whether customer sent right things or not 
