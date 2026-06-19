@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //giving the submit button in the contact page a function
 const form = document.getElementById("enquiryForm")
-const messagebox=document.getElementById("Message-box")
+const Message-box=document.getElementById("Message-box")
 
 form.addEventListener("submit",function(event){
   //other line will be added after
@@ -111,13 +111,33 @@ form.addEventListener("submit",function(event){
 
   if(name === "") {
 
-    messagebox.textContent= "please enter your name "
+    Message-box.textContent= "please enter your name "
     return;
   }
 
 
   if(email ===""){
 
-    messagebox.textContent= "please enter your email"
+    Message-box.textContent= "please enter your email"
+    return;
+  }
+
+  if(!email.includes('@') || !email.includes('.')){
+    Message-box.textContent = 'please enter valid email address.';
     return
   }
+  if(Message === "") {
+    Message-box.textContent = 'please enter your message.';
+    return;
+  }
+
+  const myEmail = "shangisasiyanda@gmail.com";
+  const subject = "New Contact Form Submission From" + name;
+  const body = "Name:" + name + "\nEmail: " + email +"\n\nMessage: " + Message
+  
+  window.location.href =  "mailto:" + myEmail + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+  //displaying a success message
+  Message-box.textContent = 'Thank you for contacting us ' + name + '!we will get back to you shortly.';
+  form.reset();//reset the form fields
+})
